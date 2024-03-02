@@ -4124,7 +4124,7 @@ header .main-navbar {
 
 .poster-section {
   height: 600px;
-  background-image: url(../images/furniture-images/poster/homepage.png);
+  background-image: url(../images/furniture-images/poster/homepage2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -4586,7 +4586,7 @@ header .main-navbar {
         margin-left: 0; }
 
 /* =====================
-    Slick SLider CSS Start 
+    Slick SLider CSS Start
  ========================== */
 .box-arrow .slick-prev {
   left: calc(5px + (25 - 5) * ((100vw - 320px) / (1920 - 320)));

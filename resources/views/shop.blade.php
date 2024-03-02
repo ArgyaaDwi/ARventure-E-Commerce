@@ -68,8 +68,8 @@
                                                     <label class="form-check-label"><a href="" style="color:black;">{{$br->name}}</a></label>
                                                     <p class="font-light">({{ $br->products ? $br->products->count() : 0 }})</p>
                                                 </div>
-                                            </li>  
-                                            @endforeach 
+                                            </li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </div>
@@ -115,23 +115,8 @@
                             <div class="filter-options">
                                 <div class="select-options">
                                     <div class="page-view-filter">
-                                        {{-- <div class="dropdown select-featured">
-                                            <select class="form-select" name="orderby" id="orderby">
-                                                <option value="-1" {{$order == -1 ? 'selected' : ''}}>Default</option>
-                                                <option value="1" {{$order == 1 ? 'selected' : ''}}>Date, New To Old</option>
-                                                <option value="2" {{$order == 2 ? 'selected' : ''}}>Date, Old To New</option>
-                                                <option value="3" {{$order == 3 ? 'selected' : ''}}>Price, Low To High</option>
-                                                <option value="4" {{$order == 4 ? 'selected' : ''}}>Price, High To Low</option>
-                                            </select>
-                                        </div> --}}
                                     </div>
                                     <div class="dropdown select-featured">
-                                        {{-- <select class="form-select" name="size" id="pagesize">
-                                            <option value="12" {{$size == 12 ? 'selected' : ''}}>12 Products Per Page</option>
-                                            <option value="24" {{$size == 12 ? 'selected' : ''}}>24 Products Per Page</option>
-                                            <option value="52" {{$size == 12 ? 'selected' : ''}}>52 Products Per Page</option>
-                                            <option value="100" {{$size == 12 ? 'selected' : ''}}>100 Products Per Page</option>
-                                        </select> --}}
                                     </div>
                                 </div>
                                 <div class="grid-options d-sm-inline-block d-none">
@@ -170,7 +155,7 @@
                     <!-- Prodcut setion -->
                     <div class="row g-sm-4 g-3 row-cols-lg-4 row-cols-md-3 row-cols-2 mt-1 custom-gy-5 product-style-2 ratio_asos product-list-section">
                         @foreach ($product as $pr)
-                            
+
                         <div>
                             <div class="product-box">
                                 <div class="img-wrapper">
@@ -188,7 +173,7 @@
                                     </div>
                                     <div class="cart-wrap">
                                         <ul>
-                                        
+
                                             <li>
                                                 <a href="{{route('users.shopdetails', ['id'=>$pr->id])}}">
                                                     <i data-feather="eye"></i>
@@ -221,20 +206,13 @@
                             </div>
                         </div>
                         @endforeach
-
-
                     </div>
-                 
-
                 </div>
             </div>
         </div>
     </section>
     <!-- Shop Section end -->
    <form id="frmFilter" method="GET" >
-        {{-- <input type="hidden" name="page" id="page" value="{{$page}}">
-        <input type="hidden" name="size" id="size" value="{{$size}}">
-        <input type="hidden" name="order" id="order" value="{{$order}}"> --}}
         <input type="hidden" name="brand" id="brand" value="{{$q_brand}}"/>
         <input type="hidden" name="category" id="category" value="{{$q_category}}"/>
    </form>
@@ -261,7 +239,7 @@
                 }
             });
             $("#brand").val(brand);
-            $("#frmFilter").submit(); 
+            $("#frmFilter").submit();
         }
         function filterProductByCategory(){
             var category = "";
@@ -274,7 +252,7 @@
                 }
             });
             $("#category").val(category);
-            $("#frmFilter").submit(); 
+            $("#frmFilter").submit();
         }
     </script>
 @endpush

@@ -30,7 +30,7 @@
               <p class="mb-2"style="color: black;"><b>Total Product</b></p>
               <span class="material-symbols-outlined" style="color: black;background-color:white;padding:10px;border-radius:12px;">
                 deployed_code
-                </span> 
+                </span>
               <p class="fs-30 mb-4 mt-3 "style="color: black;">{{$product->count()}}</p>
             </div>
           </div>
@@ -53,7 +53,7 @@
               <p class="mb-2"style="color: black;"><b>Total User</b></p>
               <span class="material-symbols-outlined" style="color: black;background-color:white;padding:10px;border-radius:12px;">
                 person
-                </span>          
+                </span>
               <p class="fs-30 mb-4 mt-3"style="color: black;"> {{ $user->where('utype', 'USR')->count() }}</p>
             </div>
           </div>
@@ -81,7 +81,7 @@
               </div>
             </li>
             @endforeach
-          </ul> 
+          </ul>
         </div>
       </div>
     </div>
@@ -100,10 +100,10 @@
                   <th>Name</th>
                   <th>Email</th>
                   <th>No Telephone</th>
-                </tr>  
+                </tr>
               </thead>
               <tbody>
-                @foreach ($recentUser as $lu)
+                @foreach ($recentUser->where('utype', 'USR') as $lu)
                 <tr>
                   <td>{{$lu->id}}</td>
                   <td>
@@ -122,7 +122,7 @@
           </div>
         </div>
       </div>
-    </div>        
+    </div>
   </div>
   <div class="row">
   </div>

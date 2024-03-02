@@ -91,7 +91,6 @@
                     <label for="pass">Password</label>
                     <input type="password" id="pass" class="block mt-1 w-full" name="password" required="" autocomplete="current-password">
                         @error('password')<span class="text-danger mt-3">{{$message}}</span>@enderror
-
                 </div>
                 <div class="button login">
                     <button type="submit">

@@ -1,5 +1,4 @@
 @extends('layouts.base')
-
 @section('content')
   <style>
         [type="text"]:focus,
@@ -26,6 +25,12 @@
     <div class="login-section">
         <div class="materialContainer">
             <div class="box">
+                @if(session()->has('message'))
+                    <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                    {{session()->get('message')}}
+                    </div>
+                 @endif
                 <form method="POST" action="{{route('register')}}">
                     @csrf
                     <div class="login-title">
@@ -66,6 +71,5 @@
             <p><a href="{{route('login')}}" class="theme-color">Already have an account?</a></p>
         </div>
     </div>
-
     <!-- Sign Up Section End -->
 @endsection

@@ -26,12 +26,12 @@
                     <th>Timestamp</th>
                     {{-- <th>Message</th> --}}
                     <th>Action</th>
-                  </tr>  
+                  </tr>
                 </thead>
                 <tbody>
                   @php
                     $no=1;
-                  @endphp     
+                  @endphp
                   @foreach ($messages as $mess)
                   <tr>
                     <td>{{$no++}}</td>
@@ -42,7 +42,7 @@
                       @else
                           <span>No Photo</span>
                       @endif
-                    </td> 
+                    </td>
                     <td>{{$mess->user->name}}</td>
                     {{-- <td >{{$mess->user->email}}</td> --}}
                     <td>{{$mess->user->no_telepon}}</td>
@@ -53,8 +53,6 @@
                       <a data-toggle="modal" data-target="#deleteModal{{$mess->id}}" class="btn btn-danger btn-sm"><span class="material-symbols-outlined">delete</span></a>
                     </td>
                   </tr>
-                  @endforeach      
-                  
                   <div class="modal fade" id="deleteModal{{$mess->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel{{$mess->id}}" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
@@ -77,13 +75,14 @@
                         </div>
                       </div>
                     </div>
-                  </div>                    
+                  </div>
                 </tbody>
+                @endforeach
               </table>
             </div>
           </div>
         </div>
-      </div>        
+      </div>
     </div>
     <div class="row">
     </div>

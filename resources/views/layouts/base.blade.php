@@ -20,7 +20,6 @@
     <meta name="keywords" content="Surfside Media">
     <meta name="author" content="Surfside Media">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-
     <title>ARventure</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link id="rtl-link" rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors/bootstrap.css')}}">
@@ -78,7 +77,7 @@
             font-weight: bold;
             text-transform: uppercase;
             line-height: 24px;
-            border-radius:50%; 
+            border-radius:50%;
         }
 
         .name-usr span {
@@ -131,11 +130,11 @@
                                         </div>
                                         <ul class="nav-menu">
                                             <li class="back-btn d-xl-none">
-                                                <div class="close-btn">
+                                                {{-- <div class="close-btn">
                                                     Menu
                                                     <span class="mobile-back"><i class="fa fa-angle-left"></i>
                                                     </span>
-                                                </div>
+                                                </div> --}}
                                             </li>
                                             @if(Route::has('login'))
                                                 @auth
@@ -145,13 +144,13 @@
                                                         <li><a href="{{('/')}}" class="nav-link menu-title">Home</a></li>
                                                         <li><a href="{{route('shop.index')}}" class="nav-link menu-title">Shop</a></li>
                                                         <li><a href="{{route('users.aboutus')}}" class="nav-link menu-title">About Us</a></li>
-                                                        <li><a href="{{route('users.contactus')}}" class="nav-link menu-title">Contact Us</a> 
+                                                        <li><a href="{{route('users.contactus')}}" class="nav-link menu-title">Contact Us</a>
                                                     @endif
                                                 @else
                                                         <li><a href="{{('/')}}" class="nav-link menu-title">Home</a></li>
                                                         <li><a href="{{route('login')}}" class="d-block">Shop</a></li>
                                                         <li><a href="{{route('login')}}" class="d-block">About Us</a></li>
-                                                        <li><a href="{{route('login')}}" class="d-block">Contact Us</a> 
+                                                        <li><a href="{{route('login')}}" class="d-block">Contact Us</a>
                                                 @endauth
                                             @endif
                                             </li>
@@ -164,11 +163,11 @@
                                     @if(Route::has('login'))
                                         @auth
                                             @if(Auth::user()->utype === 'USR')
-                                        
+
                                             <li class="onhover-dropdown wislist-dropdown">
                                                 <div class="cart-media">
                                                     <a href="{{route('users.cart')}}">
-                                                        <i data-feather="shopping-cart"></i>    
+                                                        <i data-feather="shopping-cart"></i>
                                                     </a>
                                                 </div>
                                             </li>
@@ -187,7 +186,7 @@
                                                     @endif
                                                 @else
                                                     <i data-feather="user"></i>
-                                                @endauth  
+                                                @endauth
                                             @endif
                                         </div>
                                         <div class="onhover-div profile-dropdown">
@@ -218,7 +217,7 @@
                                                         </li>
                                                         <li>
                                                             <a href="{{route('register')}}" class="d-block">Register</a>
-                                                        </li>   
+                                                        </li>
                                                     @endauth
                                                 @endif
                                             </ul>
@@ -283,7 +282,6 @@
     </div>
     @yield('content');
     <div id="qvmodal"></div>
-
     <footer class="footer-sm-space mt-5">
         <div class="main-footer">
             <div class="container">
@@ -301,7 +299,7 @@
                                     <span><b>phone:</b> <span class="font-light"> +62 81226513164</span></span>
                                 </li>
                                 <li>
-                                    <span><b>Address:</b><span class="font-light">Sememi Jaya Selatan 1D/17, Surabaya, East Java, Indonesia</span></span>
+                                    <span><b>Address:</b><span class="font-light">Sememi Jaya, Surabaya, East Java, Indonesia</span></span>
                                 </li>
                                 <li>
                                     <span><b>Email:</b><span class="font-light"> argyawoles@gmail.com</span></span>
@@ -362,7 +360,7 @@
                                         <a href="{{route('users.contactus')}}">
                                             <span class="input-group-text" id="basic-addon4" style="height: 48px"><i
                                                 class="fas fa-arrow-right"></i></span>
-                                        </a> 
+                                        </a>
                                 </div>
                                 <p class="font-dark mb-0">Send Us Some Messages.
                                 </p>
@@ -411,171 +409,6 @@
             </div>
         </div>
     </footer>
-    <div class="modal fade newletter-modal" id="newsletter">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content ">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                {{-- <div class="modal-body">
-                    <img src="assets/images/newletter-icon.png" class="img-fluid blur-up lazyload" alt="">
-                    <div class="modal-title">
-                        <h2 class="tt-title">Sign up for our Newsletter!</h2>
-                        <p class="font-light">Never miss any new updates or products we reveal, stay up to date.</p>
-                        <p class="font-light">Oh, and it's free!</p>
-
-                        <div class="input-group mb-3">
-                            <input placeholder="Email" class="form-control" type="text">
-                        </div>
-
-                        <div class="cancel-button text-center">
-                            <button class="btn default-theme w-100" data-bs-dismiss="modal"
-                                type="button">Submit</button>
-                        </div>
-                    </div>
-                </div> --}}
-            </div>
-        </div>
-    </div>
-
-    {{-- <div class="modal fade cart-modal" id="addtocart" tabindex="-1" role="dialog" aria-label="myModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content ">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                <div class="modal-body">
-                    <div class="modal-contain">
-                        <div>
-                            <div class="modal-messages">
-                                <i class="fas fa-check"></i> 3-stripes full-zip hoodie successfully added to
-                                you cart.
-                            </div>
-                            <div class="modal-product">
-                                <div class="modal-contain-img">
-                                    <img src="assets/images/fashion/instagram/4.jpg" class="img-fluid blur-up lazyload"
-                                        alt="">
-                                </div>
-                                <div class="modal-contain-details">
-                                    <h4>Premier Cropped Skinny Jean</h4>
-                                    <p class="font-light my-2">Yellow, Qty : 3</p>
-                                    <div class="product-total">
-                                        <h5>TOTAL : <span>$1,140.00</span></h5>
-                                    </div>
-                                    <div class="shop-cart-button mt-3">
-                                        <a href="shop-left-sidebar.php"
-                                            class="btn default-light-theme conti-button default-theme default-theme-2 rounded">CONTINUE
-                                            SHOPPING</a>
-                                        <a href="cart.php"
-                                            class="btn default-light-theme conti-button default-theme default-theme-2 rounded">VIEW
-                                            CART</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ratio_asos mt-4">
-                        <div class="container">
-                            <div class="row m-0">
-                                <div class="col-sm-12 p-0">
-                                    <div
-                                        class="product-wrapper product-style-2 slide-4 p-0 light-arrow bottom-space spacing-slider">
-                                        <div>
-                                            <div class="product-box">
-                                                <div class="img-wrapper">
-                                                    <div class="front">
-                                                        <a href="product/details.html">
-                                                            <img src="assets/images/fashion/product/front/1.jpg"
-                                                                class="bg-img blur-up lazyload" alt="">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="product-details text-center">
-                                                    <div class="rating-details d-block text-center">
-                                                        <span class="font-light grid-content">B&Y Jacket</span>
-                                                    </div>
-                                                    <div class="main-price mt-0 d-block text-center">
-                                                        <h3 class="theme-color">$78.00</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="product-box">
-                                                <div class="img-wrapper">
-                                                    <div class="front">
-                                                        <a href="product/details.html">
-                                                            <img src="assets/images/fashion/product/front/2.jpg"
-                                                                class="bg-img blur-up lazyload" alt="">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="product-details text-center">
-                                                    <div class="rating-details d-block text-center">
-                                                        <span class="font-light grid-content">B&Y Jacket</span>
-                                                    </div>
-                                                    <div class="main-price mt-0 d-block text-center">
-                                                        <h3 class="theme-color">$78.00</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="product-box">
-                                                <div class="img-wrapper">
-                                                    <div class="front">
-                                                        <a href="product/details.html">
-                                                            <img src="assets/images/fashion/product/front/3.jpg"
-                                                                class="bg-img blur-up lazyload" alt="">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="product-details text-center">
-                                                    <div class="rating-details d-block text-center">
-                                                        <span class="font-light grid-content">B&Y Jacket</span>
-                                                    </div>
-                                                    <div class="main-price mt-0 d-block text-center">
-                                                        <h3 class="theme-color">$78.00</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="product-box">
-                                                <div class="img-wrapper">
-                                                    <div class="front">
-                                                        <a href="product/details.html">
-                                                            <img src="assets/images/fashion/product/front/4.jpg"
-                                                                class="bg-img blur-up lazyload" alt="">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="product-details text-center">
-                                                    <div class="rating-details d-block text-center">
-                                                        <span class="font-light grid-content">B&Y Jacket</span>
-                                                    </div>
-                                                    <div class="main-price mt-0 d-block text-center">
-                                                        <h3 class="theme-color">$78.00</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
     <div class="tap-to-top">
         <a href="#home">
             <i class="fas fa-chevron-up"></i>
@@ -607,5 +440,4 @@
     </script>
     @stack('scripts')
 </body>
-
 </html>
