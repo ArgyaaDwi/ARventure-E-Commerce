@@ -9,9 +9,9 @@
     @endif
     <div class="row">
       <div class="col-md-12 grid-margin stretch-card">
-        
+
         <div class="card">
-          
+
           <div class="card-body">
             <p class="card-title mb-0">Transactions</p>
             <div class="table-responsive">
@@ -27,7 +27,7 @@
                     <th>Total Amount</th>
                     <th>Date</th>
                     <th>Action</th>
-                  </tr>  
+                  </tr>
                 <tbody>
                   @php
                     $no=1;
@@ -68,8 +68,8 @@
             </div>
           </div>
         </div>
-      </div>        
+      </div>
     </div>
- 
+
   </div>
 @endsection

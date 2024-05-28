@@ -43,8 +43,8 @@
 <section class="cart-section section-b-space">
     <div class="container">
         @if ($cartItems->Count() > 0)
-            
-        
+
+
         <div class="row">
             <div class="col-md-12 text-center" >
                 <table class="table cart-table"  >
@@ -59,7 +59,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($cartItems as $items)   
+                        @foreach ($cartItems as $items)
                         <tr>
                             <td>
                                 <a href="{{route('users.shopdetails', ['id'=>$items->product->id])}}">
@@ -121,7 +121,7 @@
                                     @method('DELETE')
                                     <button type="submit"><i class="fas fa-times"></i></button>
                                 </form>
-                            </td>                            
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -159,7 +159,7 @@
                         </div> --}}
                     </div>
                     <div class="col-lg-4 col-sm-6 ">
-                       
+
                         {{-- <form method="POST" action="{{ route('checkout') }}">
                             @method('post')
                             @csrf <!-- Laravel akan menambahkan token CSRF otomatis -->
@@ -188,11 +188,11 @@
                                     <form method="POST" action="{{ route('checkout') }}">
                                         @method('post')
                                         @csrf <!-- Laravel akan menambahkan token CSRF otomatis -->
-                                        <div class="bottom-details">
-                                            <button type="submit">Process Checkout</button>
+                                        <div class="bottom-details" style="background-color: #7EA66B">
+                                            <button type="submit" style="border: none; color:rgb(255, 255, 255);background-color:#7EA66B">Process Checkout</button>
                                         </div>
                                     </form>
-                                                                 
+
                                 </div>
                             </div>
                         </div>
@@ -200,7 +200,7 @@
                 </div>
             </div>
         </div>
-        @else   
+        @else
             <div class="row">
                 <div class="col-md-12 text-center">
                     <h2>Your cart is empty!</h2>

@@ -55,6 +55,7 @@ class CartController extends Controller
                     'id_product' => $product->id,
                     'quantity' => $request->stock,
                     'harga' => $product->harga * $request->stock,
+                    'is_checkout' => false,
                 ]);
             }
             $product->decrement('stock', $request->stock);
@@ -87,23 +88,23 @@ class CartController extends Controller
     // }
     public function destroy($id){
         $cartItem = ShoppingCart::find($id);
-    
+
         if (!$cartItem) {
             return redirect()->back()->with('error', 'Cart item not found');
         }
-    
+
         // Tambahkan kembali stok produk
         $product = $cartItem->product;
         $product->increment('stock', $cartItem->quantity);
-    
+
         // Hapus item dari keranjang
         $cartItem->delete();
-    
+
         return redirect()->back()->with('message', 'Item has been removed from the cart successfully');
     }
     public function clearAllItems()
     {
-        $user = Auth::user(); 
+        $user = Auth::user();
         $cartItems = $user->cartItems;
         foreach ($cartItems as $cartItem) {
             $cartItem->delete();

@@ -249,31 +249,21 @@
     <div class="mobile-menu d-sm-none">
         <ul>
             <li>
-                <a href="demo3.php" class="active">
+                <a href="{{('/')}}" class="active">
                     <i data-feather="home"></i>
                     <span>Home</span>
                 </a>
             </li>
+
             <li>
-                <a href="javascript:void(0)">
-                    <i data-feather="align-justify"></i>
-                    <span>Category</span>
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">
-                    <i data-feather="shopping-bag"></i>
+                <a href="{{route('users.cart')}}">
+                    <i data-feather="shopping-cart"></i>
                     <span>Cart</span>
                 </a>
             </li>
+
             <li>
-                <a href="javascript:void(0)">
-                    <i data-feather="heart"></i>
-                    <span>Wishlist</span>
-                </a>
-            </li>
-            <li>
-                <a href="user-dashboard.php">
+                <a href="{{route('users.index')}}">
                     <i data-feather="user"></i>
                     <span>Account</span>
                 </a>
@@ -296,13 +286,13 @@
                             </div>
                             <ul class="contact-lists" style="clear:both;">
                                 <li>
-                                    <span><b>phone:</b> <span class="font-light"> +62 81226513164</span></span>
+                                    <span><b>phone:</b> <span class="font-light"> +62 81234567891</span></span>
                                 </li>
                                 <li>
-                                    <span><b>Address:</b><span class="font-light">Sememi Jaya, Surabaya, East Java, Indonesia</span></span>
+                                    <span><b>Address:</b><span class="font-light">Jl. Raya ITS Politeknik Elektronika, Kampus ITS Sukolilo, Keputih, Sukolilo, Kota SBY, Jawa Timur</span></span>
                                 </li>
                                 <li>
-                                    <span><b>Email:</b><span class="font-light"> argyawoles@gmail.com</span></span>
+                                    <span><b>Email:</b><span class="font-light"> arventure@gmail.com</span></span>
                                 </li>
                             </ul>
                         </div>
