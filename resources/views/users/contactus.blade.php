@@ -69,7 +69,7 @@
                                     <label for="comment" class="form-label">Content</label>
                                     <textarea class="form-control" name="content" id="comment" rows="5" required=""></textarea>
                                 </div>
-    
+
                                 <div class="col-auto">
                                     <button class="btn btn-solid-default" type="submit">Submit</button>
                                     <a class="btn btn-outline-success btn-sm" style="margin-left:30px;margin-top:3px;" href="{{route('app.index')}}"><span class="material-symbols-outlined" >
@@ -78,7 +78,7 @@
                                 </div>
                             </div>
                         </form>
-                        
+
                     </div>
                 </div>
 
@@ -93,7 +93,7 @@
                                 </div>
                                 <div class="contact-title">
                                     <h4>Address :</h4>
-                                    <p>Sememi Jaya Selatan 1D/17, Surabaya, East Java, Indonesia</p>
+                                    <p>Jl. Raya ITS Politeknik Elektronika, Kampus ITS Sukolilo, Keputih, Sukolilo, Kota SBY, Jawa Timur</p>
                                 </div>
                             </div>
 
@@ -103,7 +103,7 @@
                                 </div>
                                 <div class="contact-title">
                                     <h4>Phone Number :</h4>
-                                    <p>+62 81226513164</p>
+                                    <p>+62 81234567891</p>
                                 </div>
                             </div>
 
@@ -113,13 +113,13 @@
                                 </div>
                                 <div class="contact-title">
                                     <h4>Email Address :</h4>
-                                    <p>argyawoles@gmail.com</p>
+                                    <p>arventure@gmail.com</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </section>
