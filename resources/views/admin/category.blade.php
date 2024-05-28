@@ -24,7 +24,7 @@
                     <th>Image</th>
                     <th>Name</th>
                     <th>Action</th>
-                  </tr>  
+                  </tr>
                 </thead>
                 <tbody>
                   @php
@@ -40,9 +40,9 @@
                           @else
                               <span>No Photo</span>
                           @endif
-                        </td>                              
+                        </td>
                         <td>{{$c->name}}</td>
-                        <td> 
+                        <td>
                           <a class="btn btn-outline-primary btn-sm" href="{{route('admin.category_edit', ['id' => $c->id]) }}"><span class="material-symbols-outlined">edit</span></a>
                           <a data-toggle="modal" data-target="#deleteModal{{$c->id}}" class="btn btn-danger btn-sm"><span class="material-symbols-outlined">delete</span></a>
                         </td>
@@ -76,8 +76,8 @@
             </div>
           </div>
         </div>
-      </div>        
+      </div>
     </div>
-  
+
   </div>
 @endsection
