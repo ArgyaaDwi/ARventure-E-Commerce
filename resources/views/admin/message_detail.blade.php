@@ -5,7 +5,7 @@
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <div class="card-header ml-3">User Details</div>
+            <div class="card-header ml-3">Message Details</div>
             <br>
             <div class="col-12 grid-margin stretch-card">
               <div class="card">
@@ -30,7 +30,7 @@
               </span></a>
           </div>
         </div>
-      </div>        
+      </div>
     </div>
   </div>
 @endsection
