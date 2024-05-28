@@ -43,11 +43,12 @@ class CartController extends Controller
         $product = Product::find($request->id);
         if ($product->stock >= $request->stock) {
             $existingCartItem = ShoppingCart::where('id_user', $user->id)
-                ->where('id_product', $product->id)
+                ->where('id_product', $product->id)->where('is_checkout', false)
                 ->first();
             if ($existingCartItem) {
                 $existingCartItem->update([
                     'quantity' => $existingCartItem->quantity + $request->stock,
+                    'harga' => ($existingCartItem ->quantity + $request->stock) * $product->harga
                 ]);
             } else {
                 ShoppingCart::create([
@@ -93,11 +94,9 @@ class CartController extends Controller
             return redirect()->back()->with('error', 'Cart item not found');
         }
 
-        // Tambahkan kembali stok produk
         $product = $cartItem->product;
         $product->increment('stock', $cartItem->quantity);
 
-        // Hapus item dari keranjang
         $cartItem->delete();
 
         return redirect()->back()->with('message', 'Item has been removed from the cart successfully');

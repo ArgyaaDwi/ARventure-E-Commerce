@@ -1,6 +1,24 @@
 @extends('layouts.base')
 @push('styles')
     <link id="color-link" rel="stylesheet" type="text/css" href="{{asset('assets/css/demo2.css')}}">
+    <style>
+        .spinner-border {
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            vertical-align: text-bottom;
+            border: 0.25em solid currentColor;
+            border-right-color: transparent;
+            border-radius: 50%;
+            animation: spinner-border .75s linear infinite;
+        }
+
+        @keyframes spinner-border {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 @endpush
 @section('content')
     <section class="breadcrumb-section section-b-space" style="padding-top:20px;padding-bottom:20px;">
@@ -33,14 +51,14 @@
                                     <i class="fas fa-home"></i>
                                 </a>
                             </li>
-                       
+
                             <li class="breadcrumb-item active" aria-current="page">{{$product->product_name}}</li>
                         </ol>
                     </nav>
                 </div>
             </div>
         </div>
-    </section> 
+    </section>
     <section>
         <div class="container">
             <div class="row gx-4 gy-5">
@@ -106,9 +124,10 @@
                                     </div>
                                     <div class="product-buttons">
                                         @if ($product->stock > 0)
-                                        <a href="javascript:void(0)" onclick="addToCart();" class="btn btn-solid hover-solid btn-animation">
+                                        <a href="javascript:void(0)" onclick="addToCart();" class="btn btn-solid hover-solid btn-animation" id="add-to-cart-btn">
                                             <i class="fa fa-shopping-cart"></i>
                                             <span>Add To Cart</span>
+                                            <div id="spinner" class="spinner-border" style="display: none;"></div>
                                         </a>
                                         @else
                                             <h4>Out of Stock</h4>
@@ -142,7 +161,7 @@
                                                         <i class="fab fa-instagram"></i>
                                                     </a>
                                                 </li>
-                                               
+
                                             </ul>
                                         </div>
                                     </div>
@@ -168,20 +187,20 @@
                                 </div>
                             </div>
 
-                           
+
                         </div>
                     </div>
-                    
+
                 </div>
-                
+
             </div>
-          
+
         </div>
         <a class="btn btn-outline-success btn-sm" style="margin-left:70px;margin-top:40px;" href="{{route('shop.index')}}"><span class="material-symbols-outlined" >
             keyboard_backspace
             </span></a>
     </section>
-  
+
     <form id="addtocart" method="post" action="{{route('cart.store')}}" style="display: none;">
         @csrf
         <input type="hidden" name="id" value="{{$product->id}}">
@@ -193,13 +212,22 @@
     function updateQuantity(value) {
         var quantityInput = document.getElementById('quantity');
         var currentQuantity = parseInt(quantityInput.value);
-        var newQuantity = Math.max(currentQuantity + value, 1);    
+        var newQuantity = Math.max(currentQuantity + value, 1);
         quantityInput.value = newQuantity;
     }
-    
+
     function addToCart() {
-        var quantity = document.getElementById('quantity').value;    
-        document.getElementById('qty').value = quantity;    
+        var quantity = document.getElementById('quantity').value;
+        document.getElementById('qty').value = quantity;
+
+        // Show spinner and change button text
+        var addToCartBtn = document.getElementById('add-to-cart-btn');
+        var spinner = document.getElementById('spinner');
+        addToCartBtn.querySelector('span').style.display = 'none';
+        addToCartBtn.querySelector('.fa-shopping-cart').style.display = 'none';
+        spinner.style.display = 'inline-block';
+
+        // Submit form
         document.getElementById('addtocart').submit();
     }
     </script>

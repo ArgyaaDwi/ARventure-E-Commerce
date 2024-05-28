@@ -10,7 +10,6 @@
         <li></li>
         <li></li>
         <li></li>
-        <li></li>
         <li></li> --}}
     </ul>
     <div class="container">
@@ -43,8 +42,6 @@
 <section class="cart-section section-b-space">
     <div class="container">
         @if ($cartItems->Count() > 0)
-
-
         <div class="row">
             <div class="col-md-12 text-center" >
                 <table class="table cart-table"  >
@@ -147,16 +144,6 @@
             <div class="cart-checkout-section">
                 <div class="row g-4">
                     <div class="col-lg-4 col-sm-6">
-                        {{-- <div class="promo-section">
-                            <form class="row g-3">
-                                <div class="col-7">
-                                    <input type="text" class="form-control" id="number" placeholder="Coupon Code">
-                                </div>
-                                <div class="col-5">
-                                    <button class="btn btn-solid-default rounded btn">Apply Coupon</button>
-                                </div>
-                            </form>
-                        </div> --}}
                     </div>
                     <div class="col-lg-4 col-sm-6 ">
 
@@ -189,7 +176,10 @@
                                         @method('post')
                                         @csrf <!-- Laravel akan menambahkan token CSRF otomatis -->
                                         <div class="bottom-details" style="background-color: #7EA66B">
-                                            <button type="submit" style="border: none; color:rgb(255, 255, 255);background-color:#7EA66B">Process Checkout</button>
+                                            <button type="submit" id="checkout-btn" style="border: none; color:rgb(255, 255, 255);background-color:#7EA66B">
+                                                <span>Process Checkout</span>
+                                                <div id="checkout-spinner" class="spinner-border" style="display: none;"></div>
+                                            </button>
                                         </div>
                                     </form>
 
@@ -231,5 +221,13 @@
         // Mengirim formulir menggunakan AJAX
         $('#updateCartForm').submit();
     }
+
+    document.getElementById('checkout-btn').addEventListener('click', function() {
+        var button = document.getElementById('checkout-btn');
+        var spinner = document.getElementById('checkout-spinner');
+
+        button.querySelector('span').style.display = 'none';
+        spinner.style.display = 'inline-block';
+    });
 </script>
 @endpush
